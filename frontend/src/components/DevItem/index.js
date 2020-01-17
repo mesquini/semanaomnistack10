@@ -1,7 +1,13 @@
 import React from "react";
 import "./style.css";
+import api from "../../services/api";
 
 export default function DevItem({ dev }) {
+  async function handleRemove(user) {
+    await api.delete(`/dev/${user}`);
+    document.location.reload();
+  }
+
   return (
     <li className="dev-item">
       <header>
@@ -12,9 +18,12 @@ export default function DevItem({ dev }) {
         </div>
       </header>
       <p> {dev.bio} </p>
-      <a href={`https://github.com/${dev.github_username}`}>
-        Acessar perfil no Github
-      </a>
+      <div className="justify">
+        <a href={`https://github.com/${dev.github_username}`}>
+          Acessar perfil no Github
+        </a>
+        <button onClick={() => handleRemove(dev.github_username)}>X</button>
+      </div>
     </li>
   );
 }

@@ -56,3 +56,20 @@ li.dev-item a {
 li.dev-item a:hover {
     color: #8e4dffe1;
 }
+
+li .justify {
+    display: flex;
+    justify-content: space-between;
+}
+
+li .justify button{
+    background: #ff0000;
+    border: 0;
+    border-radius: 5pxcx;
+    cursor: pointer;
+    padding: 0 2px 0 2px;
+} 
+
+li .justify button:hover{
+    background: #ff0000ce;
+}
