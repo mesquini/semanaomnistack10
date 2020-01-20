@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Image,
   View,
-  KeyboardAvoidingView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -17,6 +16,7 @@ import {
 } from "expo-location";
 
 import api from "../server/api";
+import { connect, disconnect, subscribeToNewDevs } from "../server/socket";
 
 function Main({ navigation }) {
   const [devs, setDevs] = useState([]);
@@ -45,6 +45,16 @@ function Main({ navigation }) {
     loadInitialPosition();
   }, []);
 
+  useEffect(() => {
+    subscribeToNewDevs(dev => setDevs([...devs, dev]));
+  }, [devs]);
+
+  function setupWebsocket() {
+    disconnect();
+    const { latitude, longitude } = currentRegion;
+    connect(latitude, longitude, techs);
+  }
+
   async function loadDevs() {
     const { latitude, longitude } = currentRegion;
 
@@ -56,8 +66,9 @@ function Main({ navigation }) {
       }
     });
 
-    setDevs(response.data.devs);
     Keyboard.dismiss();
+    setDevs(response.data.devs);
+    setupWebsocket();
   }
 
   function handleRegionChanged(region) {
@@ -80,9 +91,6 @@ function Main({ navigation }) {
         />
         <TouchableOpacity onPress={loadDevs} style={styles.loadButton}>
           <MaterialIcons name="my-location" size={20} color="#fff" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}} style={styles.loadButton}>
-          <MaterialIcons name="list" size={20} color="#fff" />
         </TouchableOpacity>
       </View>
       <MapView

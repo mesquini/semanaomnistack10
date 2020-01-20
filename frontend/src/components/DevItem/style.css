@@ -1,75 +1,73 @@
-
 li.dev-item {
-    background: #fff;
-    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
-    border-radius: 2px;
-    padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+  border-radius: 2px;
+  padding: 20px;
 }
 
 li.dev-item header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 li.dev-item header img {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
 }
 
 @media (max-width: 650px) {
-    main ul {
-        grid-template-columns: 1fr;
-    }
+  main ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 li.dev-item header .user-info {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .user-info strong {
-    display: block;
-    font-size: 16px;
-    color: #333;
+  display: block;
+  font-size: 16px;
+  color: #333;
 }
 
 .user-info span {
-    font-size: 13px;
-    color: #999;
-    margin-top: 2px;
+  font-size: 13px;
+  color: #999;
+  margin-top: 2px;
 }
 
 li.dev-item p {
-    color: #666;
-    font-size: 14px;
-    line-height: 20px;
-    margin: 10px 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 10px 0;
 }
 
 li.dev-item a {
-    color: #8e4dff;
-    font-size: 14px;
-    text-decoration: none;
+  color: #8e4dff;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 li.dev-item a:hover {
-    color: #8e4dffe1;
+  color: #8e4dffe1;
 }
 
 li .justify {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-li .justify button{
-    background: #ff0000;
-    border: 0;
-    border-radius: 5pxcx;
-    cursor: pointer;
-    padding: 0 2px 0 2px;
-} 
+li .justify button {
+  border: 0;
+  cursor: pointer;
+  padding: 0 2px 0 2px;
+}
 
-li .justify button:hover{
-    background: #ff0000ce;
+li .justify button:hover {
+    transform: scale(1.2, 1.2);  
+    transition-duration: 0.5s;  
 }

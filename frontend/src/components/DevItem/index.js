@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import MaterialIcon from "material-icons-react";
 import api from "../../services/api";
 
 export default function DevItem({ dev }) {
@@ -22,7 +23,9 @@ export default function DevItem({ dev }) {
         <a href={`https://github.com/${dev.github_username}`}>
           Acessar perfil no Github
         </a>
-        <button onClick={() => handleRemove(dev.github_username)}>X</button>
+        <button onClick={() => handleRemove(dev.github_username)}>
+          <MaterialIcon icon="remove_circle" />
+        </button>
       </div>
     </li>
   );
