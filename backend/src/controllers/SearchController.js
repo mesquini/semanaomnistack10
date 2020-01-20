@@ -4,7 +4,6 @@ const parceStringAsArray = require("../util/parseStringAsArray");
 module.exports = {
   async index(req, res) {
     const { latitude, longitude, techs } = req.query;
-    console.log(latitude + longitude);
 
     const techsArray = parceStringAsArray(techs);
 
@@ -22,7 +21,6 @@ module.exports = {
         }
       }
     });
-    console.log(devs);
 
     return res.json({ devs });
   }

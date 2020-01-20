@@ -6,7 +6,8 @@ import {
   KeyboardAvoidingView,
   Text,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Keyboard
 } from "react-native";
 import MapView, { Marker, Callout } from "react-native-maps";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -54,9 +55,9 @@ function Main({ navigation }) {
         techs
       }
     });
-    console.log(response.data.devs);
 
     setDevs(response.data.devs);
+    Keyboard.dismiss();
   }
 
   function handleRegionChanged(region) {
@@ -80,18 +81,22 @@ function Main({ navigation }) {
         <TouchableOpacity onPress={loadDevs} style={styles.loadButton}>
           <MaterialIcons name="my-location" size={20} color="#fff" />
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}} style={styles.loadButton}>
+          <MaterialIcons name="list" size={20} color="#fff" />
+        </TouchableOpacity>
       </View>
       <MapView
         onRegionChangeComplete={handleRegionChanged}
         initialRegion={currentRegion}
         style={styles.map}
+        onPress={Keyboard.dismiss}
       >
         {devs.map(dev => (
           <Marker
             key={dev._id}
             coordinate={{
-                longitude: dev.location.coordinates[0],
-                latitude: dev.location.coordinates[1]
+              longitude: dev.location.coordinates[0],
+              latitude: dev.location.coordinates[1]
             }}
           >
             <Image
@@ -147,7 +152,7 @@ const styles = StyleSheet.create({
   },
   searchForm: {
     position: "absolute",
-    top : 20,
+    top: 10,
     left: 20,
     right: 20,
     zIndex: 5,
