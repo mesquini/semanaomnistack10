@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import api from "../../services/api";
 
-export default function DevForm({}) {
+export default function DevForm() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
   const [github_username, setUsername] = useState("");
