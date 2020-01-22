@@ -10,12 +10,6 @@ For the development of this project, the ReactJS, React Native + Expo and NodeJS
 
 ![App Screenshot](https://res.cloudinary.com/mesquini/image/upload/v1579691894/RadarDev/Screenshot_44_idcn4r.png)
 
-<p align="center">
-  <a href="https://semanaomnistack10.netlify.com/" target="_blank">
-    <img alt="Demo on Netlify" src="https://res.cloudinary.com/lukemorales/image/upload/v1563043495/readme_logos/demo_on_netlify_bbuvjz.png">
-  </a>
-</p>
-
 ## :rocket: Technologies
 
 This project was developed at the Semana Omnistack 10 with the following technologies:
