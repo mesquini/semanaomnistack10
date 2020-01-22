@@ -10,6 +10,12 @@ For the development of this project, the ReactJS, React Native + Expo and NodeJS
 
 ![App Screenshot](https://res.cloudinary.com/mesquini/image/upload/v1579691894/RadarDev/Screenshot_44_idcn4r.png)
 
+<p align="center">
+  <a href="https://semanaomnistack10.netlify.com/" target="_blank">
+    <img alt="Demo on Netlify" src="https://res.cloudinary.com/lukemorales/image/upload/v1563043495/readme_logos/demo_on_netlify_bbuvjz.png">
+  </a>
+</p>
+
 ## :rocket: Technologies
 
 This project was developed at the Semana Omnistack 10 with the following technologies:
@@ -21,6 +27,7 @@ This project was developed at the Semana Omnistack 10 with the following technol
 -  [Material Icons](https://github.com/logtrace/material-icons-react)
 -  [Mongoose](https://github.com/Automattic/mongoose)
 -  [Express](https://github.com/expressjs/express)
+-  [VS Code][vc]
 
 ## :information_source: How To Use
 
@@ -48,3 +55,11 @@ $ yarn install
 # Run the app
 $ yarn start
 ```
+
+---
+
+Made with ♥ by Victor Mesquini :wave: [Get in touch!](https://www.linkedin.com/in/mesquini/)
+
+[nodejs]: https://nodejs.org/
+[yarn]: https://yarnpkg.com/
+[vc]: https://code.visualstudio.com/
